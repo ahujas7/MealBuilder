@@ -30,7 +30,17 @@ time.sleep(30)
 
 results = driver.find_elements_by_class_name('product-tile__details__info__name__link')
 
-print('Number of results', len(results))
+links_file = open('product_links.txt', 'a')
+
+links_file.write(f'Number of results: {len(results)}\n')
+
+# loop over results
+for index in range(len(results)):
+    product_link = results[index].get_attribute('href')
+    links_file.write(f'{index + 1}: {product_link}\n')
 
 driver.quit()
+
+
+
 
