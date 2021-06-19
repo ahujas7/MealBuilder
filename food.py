@@ -8,3 +8,4 @@ class food():
     
     def __str__(self):
          return f'Portion Size: {self.portionSize} g\nCalories: {self.calories} cal\nCarbs: {self.carbs} g\nProtein: {self.protein} g\nFats: {self.fats} g'
+         
