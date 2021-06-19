@@ -10,14 +10,11 @@ import time
 PATH = 'C:\Program Files (x86)\chromedriver.exe'
 
 driver = webdriver.Chrome(PATH)
-
-
 driver.get('https://www.realcanadiansuperstore.ca/')
-
 
 try:
     search_bar = WebDriverWait(driver, 20).until(
-        EC.presence_of_element_located((By.CLASS_NAME, "search-input__input"))
+        EC.presence_of_element_located((By.CLASS_NAME, 'search-input__input'))
     )
 
     search_bar.clear()
@@ -29,13 +26,18 @@ except:
 
 time.sleep(10)
 
-load_more_btn = driver.find_element_by_class_name('primary-button--load-more-button')
+while(True):
+    try:
+        driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        load_more_btn = driver.find_element_by_class_name('primary-button--load-more-button')
+        ActionChains(driver).move_to_element(load_more_btn).click(load_more_btn).perform()
+        
+        time.sleep(3)
+    except:
+        break
 
-driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
-ActionChains(driver).move_to_element(load_more_btn).click(load_more_btn).perform()
-
-time.sleep(20)
+time.sleep(10)
 
 products = driver.find_elements_by_class_name('product-tile__details__info__name__link')
 
