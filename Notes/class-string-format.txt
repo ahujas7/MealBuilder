@@ -1,10 +1,10 @@
-The function 'get_element_by_class_name' only works for a single class
+The function 'get_element_by_class_name' only works for a single class.
 
 Example: 
 
-'product-name__item--name' will work
+'product-name__item--name' will work.
 
 'product-name__item product-name__item--brand' will throw an exception 
-since this class comprises of two separate classes: 'product-name__item' and 'product-name__item--brand'
+since this class comprises of two separate classes: 'product-name__item' and 'product-name__item--brand'.
 
-We should only be using one class as a parameter (the most specific sub-class)
+We should only be using one class as a parameter (the most specific sub-class).

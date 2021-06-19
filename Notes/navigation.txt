@@ -1,0 +1,11 @@
+Even though the source code exists in the HTML files, the webdriver still needs to 'see'
+the element displayed in the browser window to interact with it.
+
+Example: 
+
+The nutrition facts are hidden under an accordion type list
+The source code for the nutrition facts exists, but it isn't visible
+on the page, hence the webdriver isn't able to retrieve the data.
+
+Rule of thumb: Always see the website from a perspective of a human.
+If a human can't see something on the webpage, the webdriver can't see it either.
