@@ -40,4 +40,18 @@ def retrieve_nutrition_data(driver, product_name, product_link):
     nutrition_facts = driver.find_element_by_class_name('product-nutrition')
 
 
+def format_name(name):
+    formatted = ''
 
+    for char in name:
+        if char.isalpha():
+            formatted += char
+        elif char == ' ':
+            formatted += '_'
+        else:
+            continue
+    
+    formatted = formatted.lower()
+    formatted += '.txt'
+
+    return formatted
