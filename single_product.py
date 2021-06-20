@@ -6,38 +6,29 @@ import time
 
 
 PATH = 'C:\Program Files (x86)\chromedriver.exe'
-URL = 'https://www.realcanadiansuperstore.ca/cumin-seeds-whole/p/20618061_EA'
-
 driver = webdriver.Chrome(PATH)
-driver.get(URL)
-
-time.sleep(5)
-
-driver.execute_script("window.scrollTo(0, 800)") 
-
-nutrition_button = driver.find_element_by_class_name('product-details-page-nutrition-info__title')
-ActionChains(driver).move_to_element(nutrition_button).click(nutrition_button).perform()
-
-time.sleep(3)
-
-nutrition_facts = driver.find_element_by_class_name('product-nutrition')
-
-driver.quit()
 
 
-def retrieve_nutrition_data(driver, product_name, product_link):
-    driver.get(URL)
+def retrieve_nutrition_data(driver, product_link):
+    driver.get(product_link)
 
     time.sleep(5)
 
     driver.execute_script("window.scrollTo(0, 800)")
 
-    nutrition_button = driver.find_element_by_class_name('product-details-page-nutrition-info__title')
-    ActionChains(driver).move_to_element(nutrition_button).click(nutrition_button).perform()
-
+    try: 
+        nutrition_button = driver.find_element_by_class_name('product-details-page-nutrition-info__title')
+        ActionChains(driver).move_to_element(nutrition_button).click(nutrition_button).perform()
+    except:
+        return None
+    
     time.sleep(3)
 
-    nutrition_facts = driver.find_element_by_class_name('product-nutrition')
+    nutrition_facts = driver.find_element_by_class_name('product-nutrition').text
+
+    driver.close()
+    
+    return nutrition_facts
 
 
 def format_name(name):

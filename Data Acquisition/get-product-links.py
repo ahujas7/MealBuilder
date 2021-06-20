@@ -41,22 +41,17 @@ time.sleep(10)
 
 products = driver.find_elements_by_class_name('product-tile__details__info__name__link')
 
-links_file = open('product_links.txt', 'a')
+links_file = open('Data Acquisition/product_links.txt', 'w')
 
 driver.find_elements
 
 links_file.write(f'Number of results: {len(products)}\n')
 
-# loop over results
-for index in range(len(products)):
-    product_name = products[index].find_element_by_class_name('product-name__item--name').text
-    product_link = products[index].get_attribute('href')
-    links_file.write(f'{index + 1}: {product_name}, {product_link}\n')
+for product in products:
+    product_name = product.find_element_by_class_name('product-name__item--name').text
+    product_link = product.get_attribute('href')
+    links_file.write(f'{product_name}: {product_link}\n')
 
 links_file.close()
 
 driver.quit()
-
-
-
-

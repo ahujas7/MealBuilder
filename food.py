@@ -1,4 +1,4 @@
-class food():
+class Food():
     def __init__(self, portion=0, cal=0, c=0, p=0, f=0):
         self.portionSize = portion
         self.calories = cal
