@@ -59,6 +59,7 @@ for name, link in products:
     nutrition_data = retrieve_nutrition_data(driver, link)
 
     if nutrition_data is None:
+        print(name, '\n')
         continue
 
     f = open(f'Nutrition Data/{format_name(name)}', 'a')
