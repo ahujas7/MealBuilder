@@ -41,7 +41,7 @@ time.sleep(10)
 
 products = driver.find_elements_by_class_name('product-tile__details__info__name__link')
 
-links_file = open('Data Acquisition/product_links.txt', 'w')
+links_file = open('Product Links Acquisition/product_links.txt', 'w')
 
 driver.find_elements
 
