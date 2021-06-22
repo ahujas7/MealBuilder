@@ -1,12 +1,12 @@
 import os
+from food import Food
 
 folder = 'Nutrition Data/'
 
 my_foods = []
-count = 0
 
 for file_name in os.listdir(folder):
-    data = {'name': file_name}
+    data = {'name': file_name[:-4]}
 
     if os.path.isfile(os.path.join(folder, file_name)):
         current_file = open(f'{folder}{file_name}', 'r')
@@ -24,5 +24,13 @@ for file_name in os.listdir(folder):
             elif line.find('Protein') != -1:
                 data['protein'] = current_file.readline()
     
-    for values in data.values():
-        pass    
+    for key in data.keys():
+        parts = data[key].split()
+        for part in parts:
+            if part[0].isdigit():
+                data[key] = float(part)
+    
+    my_foods.append(data)
+
+for food in my_foods:
+    print(food, '\n')
