@@ -16,9 +16,17 @@ class Food():
         self.serving_size = 1.000
 
 
-    def macros_in_amount(self, amount):
+    def amount(self, amount):
         self.normalize_serving()
         return Food(amount, self.calories * amount, self.carbs * amount, self.protein * amount, self.fats * amount)
+    
+    def sum_macros(self, food):
+        self.serving_size += food.serving_size
+        self.calories += food.calories
+        self.carbs += food.carbs
+        self.protein += food.protein
+        self.fats += food.fats
+
 
 
     def __str__(self):

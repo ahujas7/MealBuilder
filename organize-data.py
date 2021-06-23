@@ -1,6 +1,7 @@
 import os
 from food import Food
 
+
 folder = 'Nutrition Data/'
 
 my_foods = {}
@@ -42,5 +43,14 @@ max_carbs = sorted(my_foods, key = lambda name: my_foods[name].carbs, reverse = 
 max_fats = sorted(my_foods, key = lambda name: my_foods[name].fats, reverse = True)
 
 
-for name in max_fats:
-    print(f'{my_foods[name].macros_in_amount(100)}, {name}')
+# for name in max_fats:
+#     print(f'{my_foods[name].amount(100)}, {name}')
+
+
+smoothie = Food()
+
+smoothie.sum_macros(my_foods['greek_yogurt'].amount(300))
+smoothie.sum_macros(my_foods['ambrosia_apples'].amount(120))
+smoothie.sum_macros(my_foods['bananas'].amount(110))
+smoothie.sum_macros(my_foods['berry_blend'].amount(100))
+
