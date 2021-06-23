@@ -3,7 +3,7 @@ from food import Food
 
 folder = 'Nutrition Data/'
 
-my_foods = []
+my_foods = {}
 
 for file_name in os.listdir(folder):
     data = {'name': file_name[:-4]}
@@ -30,7 +30,14 @@ for file_name in os.listdir(folder):
             if part[0].isdigit():
                 data[key] = float(part)
     
-    my_foods.append(data)
+    food = Food(data['serving'], data['cal'], data['carbs'], data['protein'], data['fats'])
+    my_foods[data['name']] =  food
 
-for food in my_foods:
-    print(food, '\n')
+
+for name in my_foods.keys():
+    my_foods[name].normalize_serving()    
+
+max_protein = sorted(my_foods, key = lambda name: my_foods[name].protein)
+
+for name in max_protein:
+    print(f'{my_foods[name]}, {name}')
