@@ -37,7 +37,10 @@ for file_name in os.listdir(folder):
 for name in my_foods.keys():
     my_foods[name].normalize_serving()    
 
-max_protein = sorted(my_foods, key = lambda name: my_foods[name].protein)
+max_protein = sorted(my_foods, key = lambda name: my_foods[name].protein, reverse = True)
+max_carbs = sorted(my_foods, key = lambda name: my_foods[name].carbs, reverse = True)
+max_fats = sorted(my_foods, key = lambda name: my_foods[name].fats, reverse = True)
 
-for name in max_protein:
-    print(f'{my_foods[name]}, {name}')
+
+for name in max_fats:
+    print(f'{my_foods[name].macros_in_amount(100)}, {name}')
