@@ -78,7 +78,7 @@ snack1.sum_macros(my_foods['chia_seeds'].amount(25))
 
 snack2 = Food()
 
-snack2.sum_macros(my_foods['pumpkin_seeds'].amount(70))
+snack2.sum_macros(my_foods['pumpkin_seeds'].amount(40))
 snack2.sum_macros(my_foods['flax_seeds'].amount(25))
 
 
