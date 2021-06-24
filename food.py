@@ -1,17 +1,17 @@
 class Food():
     def __init__(self, serving=0.0, cal=0.0, c=0.0, p=0.0, f=0.0):
-        self.serving_size = round(serving, 1)
-        self.calories = round(cal, 1)
-        self.carbs = round(c, 1)
-        self.protein = round(p, 1)
-        self.fats = round(f, 1)
+        self.serving_size = serving
+        self.calories = cal
+        self.carbs = c
+        self.protein = p
+        self.fats = f
         
     
     def normalize_serving(self):
-        self.calories = round(self.calories / self.serving_size, 3)
-        self.carbs = round(self.carbs / self.serving_size, 3)
-        self.protein = round(self.protein / self.serving_size, 3)
-        self.fats = round(self.fats / self.serving_size, 3)
+        self.calories = self.calories / self.serving_size
+        self.carbs = self.carbs / self.serving_size
+        self.protein = self.protein / self.serving_size
+        self.fats = self.fats / self.serving_size
 
         self.serving_size = 1.000
 
@@ -30,5 +30,5 @@ class Food():
 
 
     def __str__(self):
-         return f'Portion Size: {self.serving_size} g, Calories: {self.calories} cal, Carbs: {self.carbs} g, Protein: {self.protein} g, Fats: {self.fats} g'
+         return f'Portion Size: {round(self.serving_size, 1)} g, Calories: {round(self.calories, 1)} cal, Carbs: {round(self.carbs, 1)} g, Protein: {round(self.protein, 1)} g, Fats: {round(self.fats, 1)} g'
          

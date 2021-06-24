@@ -43,14 +43,51 @@ max_carbs = sorted(my_foods, key = lambda name: my_foods[name].carbs, reverse = 
 max_fats = sorted(my_foods, key = lambda name: my_foods[name].fats, reverse = True)
 
 
-# for name in max_fats:
-#     print(f'{my_foods[name].amount(100)}, {name}')
+breakfast = Food()
+
+breakfast.sum_macros(my_foods['greek_yogurt'].amount(250))
+breakfast.sum_macros(my_foods['ambrosia_apples'].amount(225))
+breakfast.sum_macros(my_foods['bananas'].amount(125))
+breakfast.sum_macros(my_foods['berry_blend'].amount(150))
+
+lunch = Food()
+
+lunch.sum_macros(my_foods['brown_lentils_whole'].amount(200))
+lunch.sum_macros(my_foods['spinach'].amount(100))
+lunch.sum_macros(my_foods['tomatoes'].amount(200)) 
+lunch.sum_macros(my_foods['cucumber'].amount(150))
+
+dinner1 = Food()
+
+dinner1.sum_macros(my_foods['milk'].amount(400))
+dinner1.sum_macros(my_foods['almonds'].amount(50))
+dinner1.sum_macros(my_foods['unsalted_peanuts'].amount(40))
+dinner1.sum_macros(my_foods['whole_wheat_bread'].amount(58))
+
+dinner2 = Food()
+
+dinner2.sum_macros(my_foods['milk'].amount(400))
+dinner2.sum_macros(my_foods['almonds'].amount(50))
+dinner2.sum_macros(my_foods['brown_eggs'].amount(168))
+dinner2.sum_macros(my_foods['whole_wheat_bread'].amount(58))
+
+snack1 = Food()
+
+snack1.sum_macros(my_foods['pumpkin_seeds'].amount(70))
+snack1.sum_macros(my_foods['chia_seeds'].amount(25))
+
+snack2 = Food()
+
+snack2.sum_macros(my_foods['pumpkin_seeds'].amount(70))
+snack2.sum_macros(my_foods['flax_seeds'].amount(25))
 
 
-smoothie = Food()
+total = Food()
 
-smoothie.sum_macros(my_foods['greek_yogurt'].amount(300))
-smoothie.sum_macros(my_foods['ambrosia_apples'].amount(120))
-smoothie.sum_macros(my_foods['bananas'].amount(110))
-smoothie.sum_macros(my_foods['berry_blend'].amount(100))
+total.sum_macros(breakfast)
+total.sum_macros(lunch)
+total.sum_macros(dinner2)
+total.sum_macros(snack2)
 
+print(total)
+ 

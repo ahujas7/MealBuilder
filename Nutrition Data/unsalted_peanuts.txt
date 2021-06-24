@@ -1,33 +1,39 @@
-Serving Size grams 50 g
+Serving Size grams 28 g
 Amount Per Serving
 % DV
 Calories
-330 cal
+160 cal
 Total Fat
-27 g
-42 %
+14 g
+22 %
 Saturated Fat
-5 g
+2.0 g
 Trans. Fat
-0.1 g
-26 %
+0.0 g
+10 %
+Monounsaturated Fat
+7 g
+Polyunsaturated Fat
+4.5 g
 Total Carbohydrate
-8 g
-3 %
+6 g
+2 %
 Sugars
-2 g
+1 g
 Dietary Fiber
-3 g
-12 %
+2 g
+8 %
+Other Carbohydrate
+2.6 g
 Protein
-12 g
+7 g
 Potassium
-0 mg
-0 %
+175 mg
+5 %
 Cholesterol
 0 mg
 Sodium
-3 mg
+2 mg
 1 %
 Amount Per Serving
 % DV
@@ -38,5 +44,20 @@ Vitamin C
 Calcium
 2 %
 Iron
+4 %
+Thiamine
+10 %
+Riboflavin
+2 %
+Vitamin B6
+4 %
+Pantothenate
 6 %
-The values stated are approximate and may not be fully representational of this products vitamins, nutrients and ingredients.
+Phosphorus
+10 %
+Magnesium
+20 %
+Zinc
+10 %
+Selenium
+4 %
